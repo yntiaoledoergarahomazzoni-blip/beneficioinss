@@ -326,21 +326,28 @@
                 <p>Preencha o formulário abaixo para solicitar orientação administrativa. Os dados fornecidos serão utilizados exclusivamente para fins de análise e contato inicial.</p>
                 
                 <div class="form-section">
-                    <form id="orientationForm" action="SUA_URL_DO_GOOGLE_FORMS_AQUI" method="POST">
+<form 
+  id="orientationForm"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSfCTwbP0FjWMiy8Q4p1qgzx9EM7M4DN4ccEtjsOcJPC1LpEJw/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="submitted=true;"
+>
+
                         <div class="form-group">
                             <label for="fullName">Nome Completo *</label>
-                            <input type="text" id="fullName" name="entry.XXXXX" required>
+                            <input type="text" id="fullName" name="entry.1302813422" required>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="cpf">CPF *</label>
-                                <input type="text" id="cpf" name="entry.XXXXX" placeholder="000.000.000-00" required>
+                                <input type="text" id="cpf" name="entry.787413198" placeholder="000.000.000-00" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="benefitType">Tipo de Benefício *</label>
-                                <select id="benefitType" name="entry.XXXXX" required>
+                                <select id="benefitType" name="entry.1770693166" required>
                                     <option value="">Selecione</option>
                                     <option value="aposentadoria-idade">Aposentadoria por Idade</option>
                                     <option value="aposentadoria-tempo">Aposentadoria por Tempo de Contribuição</option>
@@ -355,12 +362,12 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="city">Cidade *</label>
-                                <input type="text" id="city" name="entry.XXXXX" required>
+                                <input type="text" id="city" name="entry.1072739124" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="state">Estado *</label>
-                                <select id="state" name="entry.XXXXX" required>
+                                <select id="state" name="entry.1285791123" required>
                                     <option value="">Selecione</option>
                                     <option value="AC">Acre</option>
                                     <option value="AL">Alagoas</option>
@@ -395,12 +402,12 @@
                         
                         <div class="form-group">
                             <label for="phone">Telefone com WhatsApp *</label>
-                            <input type="tel" id="phone" name="entry.XXXXX" placeholder="(00) 00000-0000" required>
+                            <input type="tel" id="phone" name="entry.977655667" placeholder="(00) 00000-0000" required>
                         </div>
                         
                         <div class="checkbox-group">
                             <label>
-                                <input type="checkbox" name="entry.XXXXX" value="Sim" required>
+                                <input type="checkbox" name="entry.155802773" value="Sim" required>
                                 Autorizo expressamente o contato telefônico via WhatsApp para fins exclusivos de orientação administrativa relacionada ao presente pré-cadastro. Declaro ciência de que o envio deste formulário não implica garantia de solução imediata ou restituição de valores.
                             </label>
                         </div>
@@ -453,5 +460,19 @@
             }
         });
     </script>
+<iframe 
+  name="hidden_iframe" 
+  style="display:none;" 
+  onload="formSubmitted()">
+</iframe>
 </body>
-</html>
+</html><script>
+  let submitted = false;
+
+  function formSubmitted() {
+    if (submitted) {
+      document.getElementById("orientationForm").reset();
+      alert("Cadastro enviado com sucesso! Em breve entraremos em contato pelo WhatsApp.");
+    }
+  }
+</script>
